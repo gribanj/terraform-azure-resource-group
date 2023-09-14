@@ -5,7 +5,8 @@ resource "azurerm_resource_group" "rg" {
   tags = merge(
     var.tags,
     {
-      createdat = formatdate("EEEE, DD MMM YYYY", timestamp())
+      created   = formatdate("EEEE, DD MMM YYYY", timestamp()),
+      terraform = "true"
     },
   )
   lifecycle {

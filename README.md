@@ -19,7 +19,7 @@ The create variable is a flag to determine whether the resource group should be 
 
 ## Ternary Operator
 
-This module makes use of the ternary operation, which is a simple form of if-else conditional logic. It's structured as follows: in Terraform. The ternary operator works like this:
+This module makes use of the ternary operation, which is a simple form of if-else conditional logic. It's structured as follows:
 
 `condition ? true_val : false_val`
 
@@ -53,8 +53,11 @@ This module manages the following resources:
 ## For a specific environment use case
 
 `e.g.`
+
+```hcl
 terraform init -backend-config="./prod.tfbackend"
 terraform plan -var-file="./terraform.tfvars"
+```
 
 <!-- BEGIN_TF_DOCS -->
 
@@ -78,7 +81,7 @@ No modules.
 | --------------------------------------------------------- | ---------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------------------- | :------: |
 | <a name="input_create"></a> [create](#input_create)       | Boolean flag to control whether a new resource group should be created | `bool`        | `false`                                                                             |    no    |
 | <a name="input_location"></a> [location](#input_location) | The location of the resource group                                     | `string`      | `"westus3"`                                                                         |    no    |
-| <a name="input_name"></a> [name](#input_name)             | The name of the resource group                                         | `string`      | n/a                                                                                 |   yes    |
+| <a name="input_name"></a> [name](#input_name)             | The name of the resource group                                         | `string`      | `"rg-xxxxxx-prod"`                                                                  |   yes    |
 | <a name="input_tags"></a> [tags](#input_tags)             | A map of tags to add to the resource group                             | `map(string)` | <pre>{<br> "env": "prod",<br> "owner": "devops",<br> "terraform": "true"<br>}</pre> |    no    |
 
 ## Outputs
