@@ -8,7 +8,7 @@ The module follows the principles of "create if not exist". The resource is only
 
 ```hcl
 module "rg" {
-  source   = ""
+  source   = "gribanj/rg/azure"
   create   = true
   name     = "rg-xxxxxx-prod"
   location = "westus3"
