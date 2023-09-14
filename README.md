@@ -68,7 +68,7 @@ variable "tags" {
   description = "A map of tags to add to the resource group"
   default = {
     "createdby" = "griban"
-    "workload"  = "enginev4"
+    "workload"  = "v3"
   }
 }
 
