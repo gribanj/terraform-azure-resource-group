@@ -15,7 +15,9 @@ module "rg" {
 }
 ```
 
-The create variable is a flag to determine whether the resource group should be created. If create is true, the resource group is created. If create is false, the module will try to fetch the data of an existing resource group with the same name.
+`create` variable is a flag to determine whether the resource should be created.
+If create is true, the resource is created.
+If create is false, the module will try to fetch the data of an existing resource with the same name.
 
 ## Ternary Operator
 
@@ -49,6 +51,48 @@ This module manages the following resources:
 - `create:` A boolean flag to create the resource group or fetch the data of an existing one.
 - `name:` The name of the resource group.
 - `location:` The location of the resource group.
+- `custom tags` Declaring custom tags variables for the resource (e.g. below)
+
+```hcl
+provider "azurerm" {
+  features {}
+}
+
+/*
+  Declaring custom tags variables for the resource:
+  - we can do it in the module as well and pass it as a variable (locals or regular) to the module
+*/
+
+variable "tags" {
+  type        = map(string)
+  description = "A map of tags to add to the resource group"
+  default = {
+    "createdby" = "griban"
+    "workload"  = "enginev4"
+  }
+}
+
+locals {
+  env = "nonprod"
+}
+
+module "rg" {
+  source   = "gribanj/rg/azure"
+  create   = true
+  name     = "rg-xxxxxx-prod"
+  location = "westus3"
+
+  # Adding custom tags to the resource
+
+  tags = merge(
+    var.tags,
+    {
+      "env"   = local.env,
+      "owner" = "devops"
+    },
+  )
+}
+```
 
 ## For a specific environment use case
 
