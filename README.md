@@ -51,7 +51,7 @@ This module manages the following resources:
 - `create:` A boolean flag to create the resource group or fetch the data of an existing one.
 - `name:` The name of the resource group.
 - `location:` The location of the resource group.
-- `custom tags` Declaring custom tags variables for the resource (e.g. below)
+- `tags` Declaring custom tags variables for the resource (e.g. below)
 
 ```hcl
 provider "azurerm" {
@@ -65,7 +65,7 @@ provider "azurerm" {
 
 variable "tags" {
   type        = map(string)
-  description = "A map of tags to add to the resource group"
+  description = "A map of tags to add to the resource"
   default = {
     "createdby" = "griban"
     "workload"  = "v3"
