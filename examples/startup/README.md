@@ -11,8 +11,8 @@
 
 ## Outputs
 
-| Name                                                           | Description                                                                               |
-| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| <a name="output_rg_output"></a> [rg_output](#output_rg_output) | The entire resource object, either existing or newly created e.g module.rg.rg_output.name |
+| Name                                                           | Description                    |
+| -------------------------------------------------------------- | ------------------------------ |
+| <a name="output_rg_output"></a> [rg_output](#output_rg_output) | e.g `module.rg.rg_output.name` |
 
 <!-- END_TF_DOCS -->
