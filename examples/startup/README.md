@@ -1,15 +1,5 @@
 <!-- BEGIN_TF_DOCS -->
 
-## Modules
-
-| Name                                      | Source | Version |
-| ----------------------------------------- | ------ | ------- |
-| <a name="module_rg"></a> [rg](#module_rg) | ../../ | n/a     |
-
-## Resources
-
-No resources.
-
 ## Inputs
 
 | Name                                                      | Description                                                      | Type          | Default                                                           | Required |
@@ -21,8 +11,8 @@ No resources.
 
 ## Outputs
 
-| Name                                                           | Description                                                  |
-| -------------------------------------------------------------- | ------------------------------------------------------------ |
-| <a name="output_rg_output"></a> [rg_output](#output_rg_output) | The entire resource object, either existing or newly created |
+| Name                                                           | Description                                                                               |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| <a name="output_rg_output"></a> [rg_output](#output_rg_output) | The entire resource object, either existing or newly created e.g module.rg.rg_output.name |
 
 <!-- END_TF_DOCS -->
