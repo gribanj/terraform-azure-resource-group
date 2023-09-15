@@ -32,7 +32,7 @@ This module makes use of the ternary operation, which is a simple form of if-els
 For instance, in the `azurerm_resource_group` resource in this module, we use a ternary operation in the `count` parameter:
 
 ```hcl
-count    = local.create_rg ? 1 : 0
+count    = var.create ? 1 : 0
 
 Here, local.create_rg is the condition.
 If local.create_rg is true, the count will be 1, meaning one resource group will be created.
