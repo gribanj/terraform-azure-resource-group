@@ -7,10 +7,10 @@ locals {
 #========================================================= RESOURCE GROUP
 
 module "rg" {
-  source   = "gribanj/rg/azure"
-  create   = true
-  name     = "rg-xxxxxx-prod"
-  location = "westus3"
+  source   = "../../"
+  create   = var.create
+  name     = var.name
+  location = var.location
 
   # Adding custom tags to the resource
 
