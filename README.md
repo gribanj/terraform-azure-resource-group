@@ -1,7 +1,6 @@
 # Terraform Resource Group Module
 
 This module handles the creation and data fetching of Azure Resource Groups based on the specified conditions.
-
 The module follows the principles of "create if not exist". The resource is only created if it doesn't exist. If it exists, it fetches the data of the existing resource.
 
 ## Module Declaration / Usage
@@ -9,6 +8,7 @@ The module follows the principles of "create if not exist". The resource is only
 ```hcl
 module "rg" {
   source   = "gribanj/rg/azure"
+  version = "0.1.0"
   create   = true
   name     = "rg-xxxxxx-prod"
   location = "westus3"
@@ -104,12 +104,6 @@ terraform plan -var-file="./terraform.tfvars"
 ```
 
 <!-- BEGIN_TF_DOCS -->
-
-## Requirements
-
-No requirements.
-
-## Providers
 
 | Name                                                         | Version |
 | ------------------------------------------------------------ | ------- |
