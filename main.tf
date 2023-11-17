@@ -3,14 +3,15 @@ resource "azurerm_resource_group" "rg" {
   name     = var.name
   location = var.location
   tags = merge(
-    var.tags,
+    local.tags,
     {
       created   = formatdate("EEEE, DD MMM YYYY", timestamp()),
       terraform = "true"
     },
+    var.extra_tags
   )
   lifecycle {
-    ignore_changes        = [tags]
+    # ignore_changes        = [tags]
     create_before_destroy = true
   }
 }
